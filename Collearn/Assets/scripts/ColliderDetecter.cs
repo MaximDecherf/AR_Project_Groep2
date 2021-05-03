@@ -7,18 +7,17 @@ public class ColliderDetecter : MonoBehaviour
 
     Material m_Material;
     Material m_Collision;
+    Material start_Material;
 
-    public GameObject targetObject;
 
-    Color defaultColor;
+    Color defaultColor = new Color(1,1,1,1);
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = targetObject.gameObject.GetComponent<Renderer>().material.color;
          //Fetch the Material from the Renderer of the GameObject
         m_Material = GetComponent<Renderer>().material;
-        print (m_Material.color);
+
     }
 
     // Update is called once per frame
@@ -35,6 +34,7 @@ public class ColliderDetecter : MonoBehaviour
             }
             else{
                 Color newColor = ( m_Material.color + m_Collision.color) ;
+                newColor.a = 1;
                 m_Material.color = newColor;
                 print(newColor);
             }
