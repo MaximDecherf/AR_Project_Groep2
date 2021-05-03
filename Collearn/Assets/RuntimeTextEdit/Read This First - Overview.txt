@@ -1,0 +1,12 @@
+Thank you for using my Asset! <3
+
+### Important disclaimer ###
+Create backups of your data. The goal of Runtime Text Edit is to make it easy and fast to change text permanently. There is no undo after a change is done. 
+
+### Getting started ###
+If you want to have a look into a scene that showcases RuntimeTextEdit go to "Examples/InteractiveDemo.unity". This is recommended if you are new to this asset. 
+
+If you want to integrate RuntimeTextEdit into your scene or project have a look into the "Getting Started" section in the Documentation. The documentation can be found online https://docs.google.com/document/d/16Km-eYJfPQjIAPnDcXKNJyUSSdmHS2zAcmyzs79KEJU/edit?usp=sharing or inside the folder "Documentation/".
+
+
+
