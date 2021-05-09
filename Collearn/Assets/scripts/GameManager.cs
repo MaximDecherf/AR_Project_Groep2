@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour
     Color levelColor;
     Dictionary<Color, List<Color>> solutions = new Dictionary<Color, List<Color>>();
 
-    
+    List<Color> allColors = new List<Color>();
 
+    int levelHardness;
+    
+    float ground_width;
+    float ground_length;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +25,11 @@ public class GameManager : MonoBehaviour
         initSolutions();
         Vector3 ground = GameObject.Find("Plane").GetComponent<Renderer>().bounds.size;
 
-        float ground_width = ground.x/3;
-        float ground_length = ground.z/3;
+        ground_width = ground.x/3;
+        ground_length = ground.z/3;
 
-
-        int levelHardness = SceneManager.GetActiveScene().buildIndex;
-        SpawnLevel((baseHardness + levelHardness), ground_width, ground_length);
+        levelHardness = (SceneManager.GetActiveScene().buildIndex) + baseHardness;
+        SpawnLevel(ground_width, ground_length);
     }
 
     // Update is called once per frame
@@ -41,20 +44,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetLevel(){
+        GameObject[] colorObjects = GameObject.FindGameObjectsWithTag("Respawn");   
+        foreach(GameObject colorObject in colorObjects)  
+        {
+            GameObject.Destroy(colorObject);
+        }
 
-    void SpawnLevel(int levelHardness, float boundary_x, float boundary_y){
+        for (int i = 0 ; i < levelHardness; ++i) {
+            Vector3 position = new Vector3(Random.Range(-ground_width, ground_width), 0.5f, 0f);
+            var sphere = Instantiate(ColorSphere, position, Quaternion.identity);
+            sphere.gameObject.tag = "Respawn";
+            Material m_color = sphere.gameObject.GetComponent<Renderer>().material;
+            
+            m_color.color = allColors[i];
+           
+        }
+    }
+
+  
+
+    void SpawnLevel(float boundary_x, float boundary_y){
     
         int flag = Random.Range(0, solutions.Count - 2);
         int index = 0;
         
         foreach(var color in solutions){
             if(index == flag){
-                levelColor = color.Key;  
+                levelColor = color.Key;
             }
             index++;
         }
 
         List<Color> solution = solutions[levelColor];
+
+        allColors.AddRange(solution);
+
+
 
         print("The level color is: " + levelColor);
 
@@ -63,8 +89,9 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0 ; i < levelHardness; ++i) {
             Vector3 position = new Vector3(Random.Range(-boundary_x, boundary_x), 0.5f, 0f);
-            var Sphere = Instantiate(ColorSphere, position, Quaternion.identity);
-            Material m_color = Sphere.gameObject.GetComponent<Renderer>().material;
+            var sphere = Instantiate(ColorSphere, position, Quaternion.identity);
+            sphere.gameObject.tag = "Respawn";
+            Material m_color = sphere.gameObject.GetComponent<Renderer>().material;
         
             if(solution.Count > i){
                 m_color.color = solution[i];
@@ -76,6 +103,7 @@ public class GameManager : MonoBehaviour
                 float bRandom = Random.Range(0.000f, 1f);
 
                 m_color.color = new Color(rRandom, gRandom, bRandom, 1);
+                allColors.Add(m_color.color);
             }
            
         }

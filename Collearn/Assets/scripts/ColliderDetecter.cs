@@ -49,4 +49,8 @@ public class ColliderDetecter : MonoBehaviour
             
         }
     }
+
+    public void ResetColor(){
+        m_Material.color = defaultColor;
+    }
 }
