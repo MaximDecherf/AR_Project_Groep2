@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     int baseHardness = 2;
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject ColorSphere;
     Color levelColor;
     Dictionary<Color, List<Color>> solutions = new Dictionary<Color, List<Color>>();
+
+    
 
 
     // Start is called before the first frame update
@@ -30,6 +33,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateColor(Color color){
+        if (color == levelColor){
+            print("level complete");
+        }
     }
 
 
@@ -53,7 +62,7 @@ public class GameManager : MonoBehaviour
 
 
         for (int i = 0 ; i < levelHardness; ++i) {
-            Vector3 position = new Vector3(Random.Range(-boundary_x, boundary_x), 0.5f, (Random.Range(-boundary_y, boundary_y)));
+            Vector3 position = new Vector3(Random.Range(-boundary_x, boundary_x), 0.5f, 0f);
             var Sphere = Instantiate(ColorSphere, position, Quaternion.identity);
             Material m_color = Sphere.gameObject.GetComponent<Renderer>().material;
         

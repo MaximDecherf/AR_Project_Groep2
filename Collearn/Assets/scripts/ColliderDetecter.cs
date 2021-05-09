@@ -12,6 +12,12 @@ public class ColliderDetecter : MonoBehaviour
 
     Color defaultColor = new Color(1,1,1,1);
 
+    private GameManager gameManager;
+
+    void Awake(){
+        gameManager = GameObject.FindObjectOfType<GameManager> ();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +44,7 @@ public class ColliderDetecter : MonoBehaviour
                 m_Material.color = newColor;
                 print(newColor);
             }
+            gameManager.UpdateColor(m_Material.color);
             Destroy(col.gameObject);
             
         }
