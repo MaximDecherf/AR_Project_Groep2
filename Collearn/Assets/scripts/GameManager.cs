@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Vuforia;
+using Image = UnityEngine.UI.Image;
 
 
 public class GameManager : MonoBehaviour
