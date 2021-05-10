@@ -281,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 721468397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7845, y: 4.615753, z: 1.7845}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1050089040}
   m_Father: {fileID: 1348208833}
@@ -848,8 +848,8 @@ MonoBehaviour:
   mDataSetPath: Vuforia/VuforiaMars_Images.xml
   mAspectRatio: 1.7272727
   mImageTargetType: 0
-  mWidth: 1.2574158
-  mHeight: 2.1719
+  mWidth: 20.321152
+  mHeight: 35.10017
 --- !u!4 &1348208833
 Transform:
   m_ObjectHideFlags: 0
@@ -859,7 +859,7 @@ Transform:
   m_GameObject: {fileID: 1348208827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1719, y: 2.1719, z: 2.1719}
+  m_LocalScale: {x: 35.10017, y: 35.10017, z: 35.10017}
   m_Children:
   - {fileID: 721468401}
   m_Father: {fileID: 0}
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: -1826476478, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWorldCenterMode: 2
+  mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
 --- !u!81 &1795854020
 AudioListener:
