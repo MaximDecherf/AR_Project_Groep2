@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     float ground_width;
     float ground_length;
 
+    Image panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,9 @@ public class GameManager : MonoBehaviour
 
         levelHardness = (SceneManager.GetActiveScene().buildIndex) + baseHardness;
         SpawnLevel(ground_width, ground_length);
+
+        panel = GameObject.Find("Panel").GetComponent<Image>();
+        showLevelColor();
     }
 
     // Update is called once per frame
@@ -62,7 +68,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-  
+    void showLevelColor(){
+        panel.color = levelColor;
+    }
 
     void SpawnLevel(float boundary_x, float boundary_y){
     
