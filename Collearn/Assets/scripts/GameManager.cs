@@ -9,10 +9,9 @@ using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
-    int baseHardness = 2;
+    int baseHardness = 0;
 
     public GameObject ColorSphere;
-    public Text Points;
     Color levelColor;
     Dictionary<Color, List<Color>> solutions = new Dictionary<Color, List<Color>>();
 
@@ -27,10 +26,16 @@ public class GameManager : MonoBehaviour
 
     Image panel;
 
+    private PointsScript points;
+
+    void Awake(){
+        points = GameObject.FindObjectOfType<PointsScript> ();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        initSolutions();
+        InitSolutions();
         Vector3 ground = GameObject.Find("Plane").GetComponent<Renderer>().bounds.size;
 
         ground_width = ground.x/3;
@@ -40,10 +45,7 @@ public class GameManager : MonoBehaviour
         SpawnLevel(ground_width, ground_length);
 
         panel = GameObject.Find("Panel").GetComponent<Image>();
-        showLevelColor();
-
-        Points.text = StarterPoints.ToString();
-        
+        ShowLevelColor();
     }
 
     // Update is called once per frame
@@ -54,8 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateColor(Color color){
         if (color == levelColor){
-            StarterPoints += 100;
-            Points.text = StarterPoints.ToString();
+            points.LevelComplete();
             print("level complete");
             SceneManager.LoadScene(7);
 
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void showLevelColor(){
+    void ShowLevelColor(){
         panel.color = levelColor;
     }
 
@@ -117,7 +118,6 @@ public class GameManager : MonoBehaviour
 
             if(solution.Count > i){
                 m_color.color = solution[i];
-                print(solution[i]);
             }
             else{
                 float rRandom = Random.Range(0.000f, 1f);
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void initSolutions(){
+    void InitSolutions(){
         solutions.Add(new Color(1, 0, 1, 1), new List<Color>(){new Color(1, 0, 0, 1), new Color(0, 0, 1, 1)}); //magenta
         solutions.Add(new Color(1, 0.92f, 0.016f, 1), new List<Color>(){new Color(1, 0, 0, 1), new Color(0, 0.92f, 0.016f, 1)}); // Yellow
         solutions.Add(new Color(0, 1, 1, 1), new List<Color>(){new Color(0, 1, 0, 1), new Color(0, 0, 1, 1)}); // cyan
