@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Back : MonoBehaviour
 {
+    
     public void GoBack()
-    {
-        SceneManager.LoadScene(1);
-    }
+{
+    SceneManager.LoadScene(1);
+}
+
 }

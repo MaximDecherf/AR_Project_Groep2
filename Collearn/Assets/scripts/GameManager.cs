@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public void UpdateColor(Color color){
         if (color == levelColor){
             print("level complete");
+            SceneManager.LoadScene(7);
         }
     }
 
