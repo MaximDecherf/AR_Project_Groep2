@@ -51,14 +51,6 @@ public class GameManager : MonoBehaviour
             print("level complete");
             print(SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(1);
-           /*
-            if (SceneManager.GetActiveScene().buildIndex == 6){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            } */ 
         }
     }
 
