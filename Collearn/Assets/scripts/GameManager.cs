@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
             StarterPoints += 100;
             Points.text = StarterPoints.ToString();
             print("level complete");
+            SceneManager.LoadScene(7);
+
         }
     }
 

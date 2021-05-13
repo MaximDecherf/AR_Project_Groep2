@@ -41,7 +41,12 @@ public class DragObject : MonoBehaviour
 
     void OnMouseDrag()
     {
-        transform.position = GetMouseAsWorldPoint() + mOffset;
+        print(GetMouseAsWorldPoint() + mOffset);
+        Vector3 dropOnLoc = GetMouseAsWorldPoint() + mOffset;
+        if (dropOnLoc.y < 0) { 
+            dropOnLoc.y = 0;
+        }
+        transform.position = dropOnLoc;
     }
 
 }
