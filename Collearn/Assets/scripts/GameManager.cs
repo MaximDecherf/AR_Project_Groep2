@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
     int baseHardness = 2;
 
     public GameObject ColorSphere;
+    public Text Points;
     Color levelColor;
     Dictionary<Color, List<Color>> solutions = new Dictionary<Color, List<Color>>();
 
     List<Color> allColors = new List<Color>();
 
     int levelHardness;
+
+    int StarterPoints = 0;
     
     float ground_width;
     float ground_length;
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
 
         panel = GameObject.Find("Panel").GetComponent<Image>();
         showLevelColor();
+
+        Points.text = StarterPoints.ToString();
+        
     }
 
     // Update is called once per frame
@@ -48,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateColor(Color color){
         if (color == levelColor){
+            StarterPoints += 100;
+            Points.text = StarterPoints.ToString();
             print("level complete");
         }
     }
