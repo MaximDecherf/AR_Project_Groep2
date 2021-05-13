@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         if (color == levelColor){
             print("level complete");
             print(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
            /*
             if (SceneManager.GetActiveScene().buildIndex == 6){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
