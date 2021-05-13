@@ -9,7 +9,7 @@ using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
-    int baseHardness = 0;
+    int baseHardness = 2;
 
     public GameObject ColorSphere;
     Color levelColor;

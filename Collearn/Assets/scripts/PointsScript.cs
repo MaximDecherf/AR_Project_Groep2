@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class PointsScript : MonoBehaviour
 {
 
-    public static int Points = 0;
-    public Text PointsText;
+    public static int points = 0;
+    public Text pointsText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        PointsText.text = Points.ToString();
+        pointsText.text = points.ToString();
     }
 
 
     public void LevelComplete(){
-        Points += 100;
-        PointsText.text = Points.ToString();
+        points += 100;
+        pointsText.text = points.ToString();
     }
 }
