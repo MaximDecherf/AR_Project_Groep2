@@ -1,1 +1,0 @@
-This folder contains example material. Open InteractiveDemo.unity for an interactive demo scene. 
