@@ -1,5 +1,0 @@
-This is the evaluation version of Runtime Text Edit. The evaluation version is identical in features, has no limitations and can be downloaded for free. You can use this version to try out Runtime Text Edit before purchasing it.
-
-Buying the paid version will enable me to develop this tool further, make it possible for me to offer extensive support and reward the 100+ hours I worked on this tool. 
-
-Thank you! <3 

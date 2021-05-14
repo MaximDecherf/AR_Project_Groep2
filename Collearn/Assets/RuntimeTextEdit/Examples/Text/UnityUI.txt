@@ -1,1 +1,0 @@
-I'm <color=white>Unity</color> UI text.
