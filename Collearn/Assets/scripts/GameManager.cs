@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         }
 
         for (int i = 0 ; i < levelHardness; ++i) {
-            Vector3 position = new Vector3(Random.Range(-0.4f, 0.4f), 0.02f, Random.Range(-0.4f, 0.4f));
+            Vector3 position = new Vector3(Random.Range(-0.25f, 0.25f), 0.02f, Random.Range(-0.25f, 0.25f));
             print(position);
             var sphere = Instantiate(ColorSphere, position, Quaternion.identity);
             sphere.gameObject.tag = "Respawn";
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
 
         for (int i = 0 ; i < levelHardness; ++i) {
-            Vector3 position = new Vector3(Random.Range(-0.4f, 0.4f), 0.02f, Random.Range(-0.4f, 0.4f));
+            Vector3 position = new Vector3(Random.Range(-0.25f, 0.25f), 0.02f, Random.Range(-0.25f, 0.25f));
             var sphere = Instantiate(ColorSphere, position, Quaternion.identity);    
             sphere.gameObject.tag = "Respawn";
             Material m_color = sphere.gameObject.GetComponent<Renderer>().material;
