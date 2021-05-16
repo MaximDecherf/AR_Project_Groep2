@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
 
     int StarterPoints = 0;
     
-    float ground_width;
-    float ground_length;
 
     Image panel;
 
@@ -36,13 +34,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InitSolutions();
-        Vector3 ground = GameObject.Find("Plane").GetComponent<Renderer>().bounds.size;
-
-        ground_width = ground.x/3;
-        ground_length = ground.z/3;
 
         levelHardness = (SceneManager.GetActiveScene().buildIndex) + baseHardness;
-        SpawnLevel(ground_width, ground_length);
+        SpawnLevel();
 
         panel = GameObject.Find("Panel").GetComponent<Image>();
         ShowLevelColor();
@@ -71,7 +65,8 @@ public class GameManager : MonoBehaviour
         }
 
         for (int i = 0 ; i < levelHardness; ++i) {
-            Vector3 position = new Vector3(Random.Range(-ground_width, ground_width), 0.5f, Random.Range(-ground_length, ground_length));
+            Vector3 position = new Vector3(Random.Range(-0.4f, 0.4f), 0.02f, Random.Range(-0.4f, 0.4f));
+            print(position);
             var sphere = Instantiate(ColorSphere, position, Quaternion.identity);
             sphere.gameObject.tag = "Respawn";
             Material m_color = sphere.gameObject.GetComponent<Renderer>().material;
@@ -85,7 +80,7 @@ public class GameManager : MonoBehaviour
         panel.color = levelColor;
     }
 
-    void SpawnLevel(float boundary_x, float boundary_y){
+    void SpawnLevel(){
     
         int flag = Random.Range(0, solutions.Count - 2);
         int index = 0;
@@ -109,7 +104,7 @@ public class GameManager : MonoBehaviour
 
 
         for (int i = 0 ; i < levelHardness; ++i) {
-            Vector3 position = new Vector3(Random.Range(-boundary_x, boundary_x), 0.5f, Random.Range(-boundary_y, boundary_y));
+            Vector3 position = new Vector3(Random.Range(-0.4f, 0.4f), 0.02f, Random.Range(-0.4f, 0.4f));
             var sphere = Instantiate(ColorSphere, position, Quaternion.identity);    
             sphere.gameObject.tag = "Respawn";
             Material m_color = sphere.gameObject.GetComponent<Renderer>().material;
@@ -144,6 +139,5 @@ public class GameManager : MonoBehaviour
         solutions.Add(new Color(0.9f, 1, 0.2f, 1), new List<Color>(){new Color(0.45f, 0, 0, 1), new Color(0.45f, 1, 0.2f, 1)});
         solutions.Add(new Color(0, 1, 0.5f, 1), new List<Color>(){new Color(0, 0.5f, 0.1f, 1), new Color(0, 0.5f, 0.4f, 1)});
         solutions.Add(new Color(0.9f, 0.555f, 0.23f, 1), new List<Color>(){new Color(0.9f, 0, 0, 1 ), new Color(0, 0.555f, 0, 1), new Color(0, 0, 0.23f, 1)});
-        solutions.Add(new Color(1, 1, 1, 1), new List<Color>(){new Color(1, 0, 0, 1), new Color(0, 1, 0, 1), new Color(0, 0, 1, 1 )}); // white
     }
 }
