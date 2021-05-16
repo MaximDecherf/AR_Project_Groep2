@@ -417,6 +417,85 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &937055505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1348208833}
+    m_Modifications:
+    - target: {fileID: 100000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_Name
+      value: Mixed_Rock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.52294016
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.52294016
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.52294016
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8556983
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48072937
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6493992
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62d6a39475b67ca4bb650c77e85947ea, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb342f6eed94af74c8e910d8b3369c96, type: 3}
+--- !u!4 &937055506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: eb342f6eed94af74c8e910d8b3369c96,
+    type: 3}
+  m_PrefabInstance: {fileID: 937055505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1050089039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 348, y: 127}
+  m_AnchoredPosition: {x: 150, y: 127}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266413324
@@ -1056,6 +1135,7 @@ Transform:
   m_LocalScale: {x: 0.12065, y: 0.12065, z: 0.12065}
   m_Children:
   - {fileID: 721468401}
+  - {fileID: 937055506}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1273,7 +1353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Make the cactus :'
+  m_Text: 'Make the Cactus :'
 --- !u!222 &1612301700
 CanvasRenderer:
   m_ObjectHideFlags: 0
